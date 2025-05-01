@@ -1,0 +1,107 @@
+all_joints:
+- - 0
+- - 1
+- - 2
+- - 3
+- - 4
+- - 5
+- - 6
+- - 7
+- - 8
+- - 9
+- - 10
+- - 11
+- - 12
+- - 13
+- - 14
+- - 15
+- - 16
+- - 17
+- - 18
+- - 19
+- - 20
+- - 21
+all_joints_names:
+- Nose
+- Eye
+- Nearknee
+- Nearfrontfetlock
+- Nearfrontfoot
+- Offknee
+- Offfrontfetlock
+- Offfrontfoot
+- Shoulder
+- Midshoulder
+- Elbow
+- Girth
+- Wither
+- Nearhindhock
+- Nearhindfetlock
+- Nearhindfoot
+- Hip
+- Stifle
+- Offhindhock
+- Offhindfetlock
+- Offhindfoot
+- Ischium
+alpha_r: 0.02
+apply_prob: 0.5
+batch_size: 8
+clahe: flase
+claheratio: 0.1
+crop_size:
+- 400
+- 400
+cropratio: 0.4
+dataset: training-datasets/iteration-0/UnaugmentedDataSet_HorsesMay8/Horses_Byron50shuffle1.mat
+dataset_type: imgaug
+decay_steps: 30000
+display_iters: 1000
+edge: false
+global_scale: 0.8
+histeq: false
+histeqratio: 0.1
+init_weights: TBD
+intermediate_supervision: false
+intermediate_supervision_layer: 12
+location_refinement: true
+locref_huber_loss: true
+locref_loss_weight: 0.05
+locref_stdev: 7.2801
+lr_init: 0.0001
+max_input_size: 1500
+max_shift: 0.4
+metadataset: training-datasets/iteration-0/UnaugmentedDataSet_HorsesMay8/Documentation_data-Horses_50shuffle1.pickle
+min_input_size: 64
+mirror: false
+multi_stage: true
+multi_step:
+- - 1e-5
+  - 5000
+- - 1e-4
+  - 20000
+- - 1e-5
+  - 30000
+- - 0.001
+  - 1030000
+net_type: resnet_50
+num_joints: 22
+pairwise_huber_loss: false
+pairwise_predict: false
+partaffinityfield_predict: false
+pos_dist_thresh: 17
+pre_resize: []
+project_path: TBD
+rotratio: 0.4
+rotation: false
+save_iters: 50000
+scale_jitter_lo: 0.375
+scale_jitter_up: 1.5625
+sharpen: false
+sharpenratio: 0.3
+gradient_masking: true
+covering: false
+elastic_transform: false
+motion_blur: false
+optimizer: adam
+scmap_type: gaussian

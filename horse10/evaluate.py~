@@ -1,0 +1,35 @@
+import deeplabcut
+import os
+import sys
+from modelzoo.easy_evaluation import Evaluation
+
+modelprefix = 'fraction_1.0_baseline'
+#modelprefix = ''
+#init_weights = '/mnt/md0/shaokai/resnet_50_transferlearning_withbn_decaysteps30000/dlc-models/iteration-0/HorsesMay8-trainset50shuffle1/train/snapshot-30000'
+
+init_weights = ''
+
+config_yaml = os.path.join(
+    os.getcwd(),
+    'config.yaml'
+)
+
+
+
+deeplabcut.evaluate_network(config_yaml,
+                            modelprefix = modelprefix,
+                            init_weights = init_weights)
+
+
+proj_root = os.getcwd()
+
+fast_evaluation = Evaluation(proj_root,
+                             modelprefix,
+                             evaluate_horse_ood = True,
+                             norm_file = f'/mnt/md0/shaokai/Horsescale.h5',
+                             init_weights = init_weights,
+                             multianimal_project = False)
+
+
+fast_evaluation.write_results()
+
