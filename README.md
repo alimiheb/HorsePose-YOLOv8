@@ -70,8 +70,5 @@ The YOLOv8n-pose model was evaluated on a validation set of 200 images:
 
 Sample inference is shown via `horse.gif`, demonstrating real-time keypoint detection on horse video footage. 🎞️
 
-
-
----
-
+![Horses](horse.gif)
 
